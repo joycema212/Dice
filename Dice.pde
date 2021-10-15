@@ -3,6 +3,7 @@ void setup()
   size(1300, 1300);
   textAlign(CENTER);
   noLoop();
+  
 }
 void draw()
 {
@@ -73,6 +74,8 @@ void draw()
       alan.show();
     }
   }
+ 
+  
   
   Die nine =new Die(700, 250);
   nine.show();
@@ -88,6 +91,9 @@ void draw()
   fourteen.show();
   Die fifteen =new Die(650, 250);
   fifteen.show();
+
+
+  
   
 }
 void mousePressed()
@@ -99,7 +105,7 @@ class Die //models one single dice cube
   //member variable declarations here
   int myX, myY;
   int side;
-
+  int sum=0;
 
   Die(int x, int y) //constructor
   {
@@ -113,17 +119,24 @@ class Die //models one single dice cube
   {
     if ((int)(Math.random()*7) == 1) {
       side = 1;
+       sum+=1;
     } else if ((int)(Math.random()*7) == 2) {
       side = 2;
+      sum+=2;
     } else if ((int)(Math.random()*7) == 3) {
       side = 3;
+      sum+=3;
     } else if ((int)(Math.random()*7) == 4) {
       side = 4;
+      sum+=4;
     } else if ((int)(Math.random()*7) == 5) {
       side = 5;
+      sum+=5;
     } else if ((int)(Math.random()*7) == 6) {
       side = 6;
+      sum+=6;
     }
+    
   }
 
   void show()
@@ -165,8 +178,18 @@ class Die //models one single dice cube
       ellipse(myX+31, myY+20, 10, 10);
       ellipse(myX+31, myY+31, 10, 10);
     }
+    fill(250,250,250);
+    rect(530, 80, 40, 40);
+    fill(0);
+    text(sum, 550, 100);
   }
+
+ 
 }
+
+
+
+
 
 
 
