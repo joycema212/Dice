@@ -1,3 +1,4 @@
+int sum;
 void setup()
 {
   size(1300, 1300);
@@ -7,6 +8,7 @@ void setup()
 }
 void draw()
 {
+  sum=0;
   background(250, 250, 250);
   for (int y = 300; y<700; y+=50) {
     for (int x = 300; x<700; x+= 50) {
@@ -105,7 +107,7 @@ class Die //models one single dice cube
   //member variable declarations here
   int myX, myY;
   int side;
-  int sum=0;
+  
 
   Die(int x, int y) //constructor
   {
@@ -186,6 +188,8 @@ class Die //models one single dice cube
 
  
 }
+
+
 
 
 
